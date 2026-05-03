@@ -739,6 +739,16 @@ body.home-page {
     background-size: auto;
 }
 
+/* Friends Page Body Background */
+body.friends-page {
+    background-color: var(--bg-color);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('blue.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 /* Letter Page Body Background */
 body.letter-page {
     background-color: var(--bg-color);
