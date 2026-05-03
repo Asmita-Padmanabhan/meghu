@@ -796,3 +796,21 @@ body.songs-page {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+/* Custom Scrollbar for Friend Notes */
+#modal-friend-note::-webkit-scrollbar {
+    width: 6px;
+}
+
+#modal-friend-note::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#modal-friend-note::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+#modal-friend-note::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover-color);
+}
