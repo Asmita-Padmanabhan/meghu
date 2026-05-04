@@ -19,20 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('player-modal');
     const closeBtn = document.getElementById('close-modal');
 
-    if (playButtons.length > 0 && modal && closeBtn) {
-        // Open modal
-        playButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const card = btn.closest('.song-card');
+    if (modal && closeBtn) {
+        // Open modal when card is clicked
+        const songCards = document.querySelectorAll('.song-card');
+        songCards.forEach(card => {
+            card.addEventListener('click', () => {
                 const embedUrl = card.getAttribute('data-embed-url');
-                
                 const iframe = document.getElementById('modal-iframe');
                 if (iframe && embedUrl) {
-                    iframe.src = embedUrl;
+                    // Add autoplay=1 to the URL
+                    // Spotify embeds use ? or & depending on existing params
+                    const separator = embedUrl.includes('?') ? '&' : '?';
+                    iframe.src = embedUrl + separator + 'autoplay=1';
                 }
-                
                 modal.classList.add('active');
             });
         });
